@@ -225,23 +225,6 @@
       "note": "Think tank, non testata giornalistica. Produce survey e analisi quantitative di altissima qualità. Accesso libero. RSS affidabile."
     },
     {
-      "id": "bbc-data",
-      "nome": "BBC News – Data Team",
-      "url": "https://www.bbc.com/news",
-      "rss_feed": ["http://feeds.bbci.co.uk/news/rss.xml"],
-      "tipo": "testata",
-      "lingua": ["en"],
-      "paese": "GB",
-      "categorie": ["politica", "economia", "clima", "salute", "società"],
-      "profili_social": {
-        "twitter": "@BBCNews",
-        "bluesky": "@bbc.com",
-        "instagram": "bbcnews",
-        "linkedin": "bbc-news"
-      },
-      "note": "Non esiste una sezione dedicata data journalism con RSS proprio. Monitorare via @BBCDataJournalism su Twitter (verificare handle esatto)."
-    },
-    {
       "id": "axios",
       "nome": "Axios",
       "url": "https://www.axios.com",
