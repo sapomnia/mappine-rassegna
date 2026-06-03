@@ -18,6 +18,23 @@
   },
   "fonti": [
     {
+      "id": "edjnet",
+      "nome": "European Data Journalism Network (EDJNet)",
+      "url": "https://www.europeandatajournalism.eu",
+      "rss_feed": ["https://www.europeandatajournalism.eu/category/news/feed/"],
+      "tipo": "testata",
+      "lingua": ["en", "it", "fr", "de", "es"],
+      "paese": "EU",
+      "categorie": ["europa", "demografia", "ambiente", "economia", "politica", "dataviz collaborativa"],
+      "profili_social": {
+        "twitter": "@EDJNet",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": "european-data-journalism-network"
+      },
+      "note": "Network paneuropeo di redazioni dati. Articoli multilingua, riprende lavori delle testate membre (OBC Transeuropa, Deutsche Welle, El Confidencial, ecc.). Feed della categoria News affidabile."
+    },
+    {
       "id": "the-pudding",
       "nome": "The Pudding",
       "url": "https://pudding.cool",
