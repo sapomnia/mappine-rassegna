@@ -1,0 +1,35 @@
+name: Rassegna settimanale
+
+on:
+  schedule:
+    # 5:00 a Roma in CEST (estivo, mar-ott) → 03:00 UTC
+    - cron: '0 3 * * 3'
+    # 5:00 a Roma in CET (invernale, nov-mar) → 04:00 UTC
+    - cron: '0 4 * * 3'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Forza invio anche fuori orario (per test)'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['false', 'true']
+
+jobs:
+  rassegna:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - run: python rassegna.py
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          MAIL_TO: riccardo@mappine.it
+          FORCE_RUN: ${{ github.event.inputs.force == 'true' && '1' || '0' }}

@@ -1,0 +1,1078 @@
+{
+  "meta": {
+    "versione": "1.0",
+    "data_creazione": "2026-05-26",
+    "descrizione": "Database fonti datadriven per rassegna stampa newsletter mappine. Campi RSS e social da verificare prima dello scraping automatizzato.",
+    "campi": {
+      "id": "slug univoco per identificare la fonte",
+      "nome": "nome della testata o del giornalista",
+      "url": "url principale",
+      "rss_feed": "array di URL RSS/Atom disponibili",
+      "tipo": "testata | newsletter | blog | giornalista",
+      "lingua": "array di codici ISO 639-1",
+      "paese": "codice ISO 3166-1 alpha-2",
+      "categorie": "array di tematiche coperte",
+      "profili_social": "handle social verificati",
+      "note": "avvertenze su paywall, handle da verificare, scraping notes"
+    }
+  },
+  "fonti": [
+    {
+      "id": "the-pudding",
+      "nome": "The Pudding",
+      "url": "https://pudding.cool",
+      "rss_feed": ["https://pudding.cool/rss.xml"],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["cultura", "sport", "musica", "società", "dataviz narrativa"],
+      "profili_social": {
+        "twitter": "@puddingviz",
+        "bluesky": "@pudding.cool",
+        "instagram": "pudding.cool",
+        "linkedin": ""
+      },
+      "note": "Visual essays basati su dati originali. Frequenza irregolare ma qualità altissima. RSS affidabile."
+    },
+    {
+      "id": "fivethirtyeight",
+      "nome": "FiveThirtyEight",
+      "url": "https://fivethirtyeight.com",
+      "rss_feed": ["https://fivethirtyeight.com/features/feed/"],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["politica", "sport", "economia", "sondaggi", "elezioni"],
+      "profili_social": {
+        "twitter": "@FiveThirtyEight",
+        "bluesky": "",
+        "instagram": "fivethirtyeight",
+        "linkedin": ""
+      },
+      "note": "Fondato da Nate Silver, ora parte di ESPN/ABC. Eccellente per sondaggi e analisi quantitativa. Verificare stato attuale della redazione nel 2026."
+    },
+    {
+      "id": "nyt-upshot",
+      "nome": "The Upshot – New York Times",
+      "url": "https://www.nytimes.com/section/upshot",
+      "rss_feed": ["https://rss.nytimes.com/services/xml/rss/nyt/Upshot.xml"],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["economia", "politica", "società", "sanità", "elezioni"],
+      "profili_social": {
+        "twitter": "@UpshotNYT",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Sezione dati del NYT. Paywall (10 art/mese gratis). RSS restituisce solo titoli senza contenuto completo."
+    },
+    {
+      "id": "reuters-graphics",
+      "nome": "Reuters Graphics",
+      "url": "https://www.reuters.com/graphics",
+      "rss_feed": [],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "GB",
+      "categorie": ["geopolitica", "economia", "clima", "conflitti", "salute"],
+      "profili_social": {
+        "twitter": "@ReutersGraphics",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Team di visual journalism di eccellenza. Non ha RSS dedicato per la sezione graphics: scraping diretto sulla pagina /graphics o via sitemap."
+    },
+    {
+      "id": "bloomberg-graphics",
+      "nome": "Bloomberg Graphics",
+      "url": "https://www.bloomberg.com/graphics",
+      "rss_feed": ["https://feeds.bloomberg.com/graphics/news.rss"],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["finanza", "economia", "tecnologia", "clima", "mercati"],
+      "profili_social": {
+        "twitter": "@BloombergGraphic",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Hard paywall. RSS disponibile ma spesso limitato. Utile monitorare i tweet per identificare pezzi aperti."
+    },
+    {
+      "id": "ft-visual-storytelling",
+      "nome": "Financial Times – Visual Storytelling",
+      "url": "https://www.ft.com/visual-and-data-journalism",
+      "rss_feed": ["https://www.ft.com/rss/home"],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "GB",
+      "categorie": ["economia", "finanza", "geopolitica", "clima", "tecnologia"],
+      "profili_social": {
+        "twitter": "@FTData",
+        "bluesky": "",
+        "instagram": "financialtimes",
+        "linkedin": "the-financial-times"
+      },
+      "note": "Hard paywall. Il team guidato da John Burn-Murdoch produce i migliori grafici del giornalismo mondiale. Monitorare via Twitter/Bluesky del team."
+    },
+    {
+      "id": "guardian-data",
+      "nome": "The Guardian – Data",
+      "url": "https://www.theguardian.com/data",
+      "rss_feed": ["https://www.theguardian.com/data/rss"],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "GB",
+      "categorie": ["politica", "ambiente", "società", "economia", "diritti"],
+      "profili_social": {
+        "twitter": "@GuardianData",
+        "bluesky": "@guardian.com",
+        "instagram": "guardian",
+        "linkedin": "the-guardian"
+      },
+      "note": "Accesso libero. RSS molto affidabile. Sezione data journalism storica e di alta qualità."
+    },
+    {
+      "id": "wapo-graphics",
+      "nome": "Washington Post – Graphics",
+      "url": "https://www.washingtonpost.com/graphics",
+      "rss_feed": ["https://feeds.washingtonpost.com/rss/national"],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["politica", "società", "economia", "clima"],
+      "profili_social": {
+        "twitter": "@PostGraphics",
+        "bluesky": "@washingtonpost.com",
+        "instagram": "washingtonpost",
+        "linkedin": ""
+      },
+      "note": "Soft paywall. RSS non filtra solo i pezzi grafici. Meglio monitorare @PostGraphics su Twitter."
+    },
+    {
+      "id": "propublica",
+      "nome": "ProPublica",
+      "url": "https://www.propublica.org",
+      "rss_feed": [
+        "https://www.propublica.org/feeds/propublica/main",
+        "https://www.propublica.org/feeds/propublica/data-store"
+      ],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["politica", "giustizia", "sanità", "ambiente", "accountability"],
+      "profili_social": {
+        "twitter": "@propublica",
+        "bluesky": "@propublica.org",
+        "instagram": "propublica.org",
+        "linkedin": "propublica"
+      },
+      "note": "Non-profit di giornalismo investigativo. Accesso libero. Ottimo Data Store con dataset scaricabili."
+    },
+    {
+      "id": "the-economist-data",
+      "nome": "The Economist – Graphic Detail",
+      "url": "https://www.economist.com/graphic-detail",
+      "rss_feed": ["https://www.economist.com/graphic-detail/rss.xml"],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "GB",
+      "categorie": ["economia", "geopolitica", "società", "tecnologia", "finanza"],
+      "profili_social": {
+        "twitter": "@TheEconomist",
+        "bluesky": "@economist.com",
+        "instagram": "theeconomist",
+        "linkedin": "the-economist"
+      },
+      "note": "Paywall. La sezione Graphic Detail è spesso parzialmente accessibile. RSS funziona per metadati."
+    },
+    {
+      "id": "our-world-in-data",
+      "nome": "Our World in Data",
+      "url": "https://ourworldindata.org",
+      "rss_feed": ["https://ourworldindata.org/atom.xml"],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "GB",
+      "categorie": ["salute", "clima", "povertà", "istruzione", "demografia", "energia"],
+      "profili_social": {
+        "twitter": "@OurWorldInData",
+        "bluesky": "@ourworldindata.org",
+        "instagram": "ourworldindata",
+        "linkedin": "our-world-in-data"
+      },
+      "note": "Accesso libero. Dati open source. Uno dei siti più citati al mondo per dati globali verificati. RSS affidabilissimo."
+    },
+    {
+      "id": "pew-research",
+      "nome": "Pew Research Center",
+      "url": "https://www.pewresearch.org",
+      "rss_feed": ["https://www.pewresearch.org/feed/"],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["società", "politica", "religione", "media", "tecnologia", "demografia"],
+      "profili_social": {
+        "twitter": "@pewresearch",
+        "bluesky": "@pewresearch.org",
+        "instagram": "pewresearch",
+        "linkedin": "pew-research-center"
+      },
+      "note": "Think tank, non testata giornalistica. Produce survey e analisi quantitative di altissima qualità. Accesso libero. RSS affidabile."
+    },
+    {
+      "id": "bbc-data",
+      "nome": "BBC News – Data Team",
+      "url": "https://www.bbc.com/news",
+      "rss_feed": ["http://feeds.bbci.co.uk/news/rss.xml"],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "GB",
+      "categorie": ["politica", "economia", "clima", "salute", "società"],
+      "profili_social": {
+        "twitter": "@BBCNews",
+        "bluesky": "@bbc.com",
+        "instagram": "bbcnews",
+        "linkedin": "bbc-news"
+      },
+      "note": "Non esiste una sezione dedicata data journalism con RSS proprio. Monitorare via @BBCDataJournalism su Twitter (verificare handle esatto)."
+    },
+    {
+      "id": "axios",
+      "nome": "Axios",
+      "url": "https://www.axios.com",
+      "rss_feed": ["https://api.axios.com/feed/"],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["tecnologia", "politica", "economia", "salute"],
+      "profili_social": {
+        "twitter": "@axios",
+        "bluesky": "@axios.com",
+        "instagram": "axios_news",
+        "linkedin": "axios"
+      },
+      "note": "Pezzi brevi e data-driven. Accesso misto (parte free, parte newsletter a pagamento)."
+    },
+    {
+      "id": "ap-data-journalism",
+      "nome": "Associated Press – Data Journalism",
+      "url": "https://www.apnews.com",
+      "rss_feed": ["https://rsshub.app/apnews/topics/Science"],
+      "tipo": "testata",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["politica", "elezioni", "economia", "salute", "tecnologia"],
+      "profili_social": {
+        "twitter": "@AP",
+        "bluesky": "@apnews.com",
+        "instagram": "ap_images",
+        "linkedin": "associated-press"
+      },
+      "note": "Accesso libero. AP ha un team dati (AP Data Institute) molto attivo, specialmente su elezioni USA."
+    },
+    {
+      "id": "infodata-sole24ore",
+      "nome": "InfoData – Il Sole 24 Ore",
+      "url": "https://infodata.ilsole24ore.com",
+      "rss_feed": ["https://infodata.ilsole24ore.com/feed/"],
+      "tipo": "testata",
+      "lingua": ["it"],
+      "paese": "IT",
+      "categorie": ["economia", "finanza", "lavoro", "tecnologia", "energia"],
+      "profili_social": {
+        "twitter": "@InfoDataSole24",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Sezione dati del Sole 24 Ore. Soft paywall. RSS e handle da verificare attività nel 2026."
+    },
+    {
+      "id": "openpolis",
+      "nome": "Openpolis",
+      "url": "https://www.openpolis.it",
+      "rss_feed": ["https://www.openpolis.it/feed/"],
+      "tipo": "testata",
+      "lingua": ["it"],
+      "paese": "IT",
+      "categorie": ["politica", "istituzioni", "spesa pubblica", "PA", "trasparenza"],
+      "profili_social": {
+        "twitter": "@openpolis",
+        "bluesky": "",
+        "instagram": "openpolis",
+        "linkedin": "openpolis"
+      },
+      "note": "Fondazione no-profit di data journalism civico italiano. Accesso libero. Dati su Parlamento, Comuni, spesa pubblica."
+    },
+    {
+      "id": "pagella-politica",
+      "nome": "Pagella Politica",
+      "url": "https://pagellapolitica.it",
+      "rss_feed": ["https://pagellapolitica.it/feed/"],
+      "tipo": "testata",
+      "lingua": ["it"],
+      "paese": "IT",
+      "categorie": ["politica", "fact-checking", "elezioni", "economia"],
+      "profili_social": {
+        "twitter": "@PagellaPolitica",
+        "bluesky": "",
+        "instagram": "pagellapolitica",
+        "linkedin": "pagella-politica"
+      },
+      "note": "Fact-checking data-driven della politica italiana. Accesso libero."
+    },
+    {
+      "id": "dataninja",
+      "nome": "Dataninja",
+      "url": "https://www.dataninja.eu",
+      "rss_feed": ["https://www.dataninja.eu/feed/"],
+      "tipo": "testata",
+      "lingua": ["it"],
+      "paese": "IT",
+      "categorie": ["data journalism", "formazione", "media", "tecnologia"],
+      "profili_social": {
+        "twitter": "@dataninja_it",
+        "bluesky": "",
+        "instagram": "dataninja_eu",
+        "linkedin": "dataninja"
+      },
+      "note": "Agenzia e community italiana di data journalism. Produce anche corsi e analisi originali."
+    },
+    {
+      "id": "lavoce-info",
+      "nome": "LaVoce.info",
+      "url": "https://www.lavoce.info",
+      "rss_feed": ["https://www.lavoce.info/feed/"],
+      "tipo": "testata",
+      "lingua": ["it"],
+      "paese": "IT",
+      "categorie": ["economia", "politica economica", "lavoro", "welfare", "fiscalità"],
+      "profili_social": {
+        "twitter": "@lavoceinfo",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": "lavoce-info"
+      },
+      "note": "Rivista online di economia con approccio empirico-quantitativo. Accesso libero. Ottimo per politiche pubbliche italiane basate su dati."
+    },
+    {
+      "id": "ispi",
+      "nome": "ISPI – Istituto per gli Studi di Politica Internazionale",
+      "url": "https://www.ispionline.it",
+      "rss_feed": ["https://www.ispionline.it/rss.xml"],
+      "tipo": "testata",
+      "lingua": ["it", "en"],
+      "paese": "IT",
+      "categorie": ["geopolitica", "migrazioni", "economia", "sicurezza", "ambiente"],
+      "profili_social": {
+        "twitter": "@ispionline",
+        "bluesky": "",
+        "instagram": "ispionline",
+        "linkedin": "ispi"
+      },
+      "note": "Think tank con pubblicazioni dati su geopolitica e politica internazionale. Accesso libero."
+    },
+    {
+      "id": "corriere-dataroom",
+      "nome": "Corriere della Sera – Dataroom",
+      "url": "https://www.corriere.it/dataroom-milena-gabanelli",
+      "rss_feed": [],
+      "tipo": "testata",
+      "lingua": ["it"],
+      "paese": "IT",
+      "categorie": ["economia", "politica", "sanità", "ambiente", "PA"],
+      "profili_social": {
+        "twitter": "@milenagabanelli",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Rubrica dati di Milena Gabanelli sul Corriere. Soft paywall. Non ha RSS proprio: monitorare via Corriere generale o via Twitter."
+    },
+    {
+      "id": "valigiablu",
+      "nome": "Valigia Blu",
+      "url": "https://www.valigiablu.it",
+      "rss_feed": ["https://www.valigiablu.it/feed/"],
+      "tipo": "testata",
+      "lingua": ["it"],
+      "paese": "IT",
+      "categorie": ["media", "tecnologia", "diritti", "politica", "disinformazione"],
+      "profili_social": {
+        "twitter": "@valigiablu",
+        "bluesky": "",
+        "instagram": "valigiablu",
+        "linkedin": ""
+      },
+      "note": "Media critico e data-informed. Non prettamente data journalism ma spesso cita fonti quantitative. Utile per il contesto mediatico."
+    },
+    {
+      "id": "elpais-datos",
+      "nome": "El País – Datos",
+      "url": "https://elpais.com/datos/",
+      "rss_feed": ["https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/datos/portada"],
+      "tipo": "testata",
+      "lingua": ["es"],
+      "paese": "ES",
+      "categorie": ["politica", "economia", "società", "clima", "salute"],
+      "profili_social": {
+        "twitter": "@el_pais",
+        "bluesky": "@elpais.com",
+        "instagram": "elpais",
+        "linkedin": "el-pais"
+      },
+      "note": "Sezione dati di El País. Soft paywall. Ottima qualità grafica. RSS da verificare."
+    },
+    {
+      "id": "civio",
+      "nome": "Civio",
+      "url": "https://civio.es",
+      "rss_feed": ["https://civio.es/feed/"],
+      "tipo": "testata",
+      "lingua": ["es"],
+      "paese": "ES",
+      "categorie": ["trasparenza", "spesa pubblica", "sanità", "PA", "accountability"],
+      "profili_social": {
+        "twitter": "@civio",
+        "bluesky": "",
+        "instagram": "civio.es",
+        "linkedin": "civio"
+      },
+      "note": "ONG spagnola di data journalism civico. Simile a Openpolis in Italia. Accesso libero."
+    },
+    {
+      "id": "lanacion-data",
+      "nome": "La Nación Data – Argentina",
+      "url": "https://www.lanacion.com.ar/data/",
+      "rss_feed": ["https://www.lanacion.com.ar/arc/outboundfeeds/rss/"],
+      "tipo": "testata",
+      "lingua": ["es"],
+      "paese": "AR",
+      "categorie": ["politica", "economia", "società", "dati aperti"],
+      "profili_social": {
+        "twitter": "@LNdata",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Team dati del quotidiano argentino, pioniere in America Latina. Accesso parzialmente libero."
+    },
+    {
+      "id": "nexo-jornal",
+      "nome": "Nexo Jornal",
+      "url": "https://www.nexojornal.com.br",
+      "rss_feed": ["https://www.nexojornal.com.br/feed/"],
+      "tipo": "testata",
+      "lingua": ["pt"],
+      "paese": "BR",
+      "categorie": ["politica", "economia", "società", "cultura", "dati"],
+      "profili_social": {
+        "twitter": "@nexojornal",
+        "bluesky": "@nexojornal.com.br",
+        "instagram": "nexojornal",
+        "linkedin": "nexo-jornal"
+      },
+      "note": "Testata brasiliana di qualità con approccio data-driven. Paywall ma con sezioni libere. Multimediale."
+    },
+    {
+      "id": "lemonde-decodeurs",
+      "nome": "Le Monde – Les Décodeurs",
+      "url": "https://www.lemonde.fr/les-decodeurs/",
+      "rss_feed": ["https://www.lemonde.fr/les-decodeurs/rss_full.xml"],
+      "tipo": "testata",
+      "lingua": ["fr"],
+      "paese": "FR",
+      "categorie": ["fact-checking", "politica", "economia", "clima", "società"],
+      "profili_social": {
+        "twitter": "@LesDecodeurs",
+        "bluesky": "@lemonde.fr",
+        "instagram": "lemondefr",
+        "linkedin": "le-monde"
+      },
+      "note": "Sezione fact-checking e data journalism di Le Monde. Soft paywall. RSS completo disponibile."
+    },
+    {
+      "id": "liberation-checknews",
+      "nome": "Libération – CheckNews",
+      "url": "https://www.liberation.fr/checknews/",
+      "rss_feed": [],
+      "tipo": "testata",
+      "lingua": ["fr"],
+      "paese": "FR",
+      "categorie": ["fact-checking", "politica", "società"],
+      "profili_social": {
+        "twitter": "@Lib_CheckNews",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Servizio fact-checking di Libération. Accesso parzialmente libero. Handle Twitter da verificare. RSS non affidabile."
+    },
+    {
+      "id": "zeit-online-data",
+      "nome": "Zeit Online – Datenjournalismus",
+      "url": "https://www.zeit.de/datenjournalismus",
+      "rss_feed": ["https://newsfeed.zeit.de/all"],
+      "tipo": "testata",
+      "lingua": ["de"],
+      "paese": "DE",
+      "categorie": ["politica", "economia", "società", "clima", "tecnologia"],
+      "profili_social": {
+        "twitter": "@zeitonline",
+        "bluesky": "@zeit.de",
+        "instagram": "zeitonline",
+        "linkedin": "zeitonline"
+      },
+      "note": "Sezione dati di Zeit Online. Soft paywall. Altissima qualità di infografiche interattive. RSS generale, non filtrato."
+    },
+    {
+      "id": "correctiv",
+      "nome": "Correctiv",
+      "url": "https://correctiv.org",
+      "rss_feed": ["https://correctiv.org/feed/"],
+      "tipo": "testata",
+      "lingua": ["de"],
+      "paese": "DE",
+      "categorie": ["fact-checking", "indagini", "trasparenza", "salute", "destra radicale"],
+      "profili_social": {
+        "twitter": "@correctiv_org",
+        "bluesky": "@correctiv.org",
+        "instagram": "correctiv_org",
+        "linkedin": "correctiv"
+      },
+      "note": "Redazione investigativa tedesca non-profit. Accesso libero. Vincitore di diversi premi internazionali."
+    },
+    {
+      "id": "tagesspiegel-data",
+      "nome": "Tagesspiegel – Innovation Lab",
+      "url": "https://interaktiv.tagesspiegel.de",
+      "rss_feed": [],
+      "tipo": "testata",
+      "lingua": ["de"],
+      "paese": "DE",
+      "categorie": ["politica", "economia", "città", "mobilità", "clima"],
+      "profili_social": {
+        "twitter": "@TspInnovation",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Innovation Lab del Tagesspiegel, Berlin. Ottimi pezzi interattivi locali. Nessun RSS dedicato."
+    },
+    {
+      "id": "volkskrant-data",
+      "nome": "De Volkskrant – Datavisual",
+      "url": "https://www.volkskrant.nl/data/",
+      "rss_feed": ["https://www.volkskrant.nl/rss.xml"],
+      "tipo": "testata",
+      "lingua": ["nl"],
+      "paese": "NL",
+      "categorie": ["politica", "società", "clima", "economia"],
+      "profili_social": {
+        "twitter": "@volkskrant",
+        "bluesky": "@volkskrant.nl",
+        "instagram": "de.volkskrant",
+        "linkedin": "de-volkskrant"
+      },
+      "note": "Team dati del principale quotidiano olandese. Soft paywall. Ottima qualità."
+    },
+    {
+      "id": "svt-datajournalistik",
+      "nome": "SVT Nyheter – Datajournalistik",
+      "url": "https://www.svt.se/datajournalistik/",
+      "rss_feed": [],
+      "tipo": "testata",
+      "lingua": ["sv"],
+      "paese": "SE",
+      "categorie": ["politica", "economia", "società", "elezioni"],
+      "profili_social": {
+        "twitter": "@svtnyheter",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Tv pubblica svedese. Ottima produzione di data journalism investigativo. Accesso libero."
+    },
+    {
+      "id": "data-is-plural",
+      "nome": "Data is Plural",
+      "url": "https://www.data-is-plural.com",
+      "rss_feed": ["https://www.data-is-plural.com/feed.xml"],
+      "tipo": "newsletter",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["dataset", "open data", "ricerca", "tool"],
+      "profili_social": {
+        "twitter": "@jsvine",
+        "bluesky": "@jsvine.com",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Newsletter settimanale di Jeremy Singer-Vine con link a dataset interessanti. Indispensabile. Archivio pubblico su GitHub."
+    },
+    {
+      "id": "chartr",
+      "nome": "Chartr",
+      "url": "https://www.chartr.co",
+      "rss_feed": [],
+      "tipo": "newsletter",
+      "lingua": ["en"],
+      "paese": "GB",
+      "categorie": ["economia", "tecnologia", "finanza", "pop culture", "dataviz"],
+      "profili_social": {
+        "twitter": "@ChartrdData",
+        "bluesky": "",
+        "instagram": "chartr.co",
+        "linkedin": "chartr"
+      },
+      "note": "Newsletter quotidiana con 3-5 grafici su temi vari. Formato molto snello. Ottima fonte per quick picks. Accesso gratuito."
+    },
+    {
+      "id": "numlock-news",
+      "nome": "Numlock News",
+      "url": "https://numlock.substack.com",
+      "rss_feed": ["https://numlock.substack.com/feed"],
+      "tipo": "newsletter",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["economia", "società", "pop culture", "business", "tecnologia"],
+      "profili_social": {
+        "twitter": "@WaltHickey",
+        "bluesky": "@walthickey.com",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Newsletter di Walt Hickey (ex FiveThirtyEight) su numeri e fatti curiosi. Quotidiana. Accesso gratuito/pagamento per archivio."
+    },
+    {
+      "id": "datawrapper-blog",
+      "nome": "Datawrapper Blog",
+      "url": "https://blog.datawrapper.de",
+      "rss_feed": ["https://blog.datawrapper.de/feed"],
+      "tipo": "blog",
+      "lingua": ["en"],
+      "paese": "DE",
+      "categorie": ["dataviz", "design", "tool", "best practice", "grafica"],
+      "profili_social": {
+        "twitter": "@datawrapper",
+        "bluesky": "@datawrapper.de",
+        "instagram": "datawrapper",
+        "linkedin": "datawrapper"
+      },
+      "note": "Blog del team di Datawrapper. Ottimi articoli su design e buone pratiche di visualizzazione dati. Accesso libero."
+    },
+    {
+      "id": "flowingdata",
+      "nome": "FlowingData",
+      "url": "https://flowingdata.com",
+      "rss_feed": ["https://flowingdata.com/feed"],
+      "tipo": "blog",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["dataviz", "statistica", "design", "tool", "dataset"],
+      "profili_social": {
+        "twitter": "@flowingdata",
+        "bluesky": "@flowingdata.com",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Blog di Nathan Yau. Aggregatore e produttore di dataviz di qualità. Parte free, parte membership."
+    },
+    {
+      "id": "information-is-beautiful",
+      "nome": "Information is Beautiful",
+      "url": "https://informationisbeautiful.net",
+      "rss_feed": ["https://informationisbeautiful.net/feed/"],
+      "tipo": "blog",
+      "lingua": ["en"],
+      "paese": "GB",
+      "categorie": ["dataviz", "infografica", "design", "cultura"],
+      "profili_social": {
+        "twitter": "@infobeautiful",
+        "bluesky": "",
+        "instagram": "informationisbeautiful",
+        "linkedin": ""
+      },
+      "note": "Progetto di David McCandless. Infografiche narrative. Accesso libero. Aggiornamento irregolare."
+    },
+    {
+      "id": "nightingale-dvs",
+      "nome": "Nightingale – Data Visualization Society",
+      "url": "https://nightingaledvs.com",
+      "rss_feed": ["https://nightingaledvs.com/feed/"],
+      "tipo": "blog",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["dataviz", "design", "ricerca", "comunità", "best practice"],
+      "profili_social": {
+        "twitter": "@DataVizSociety",
+        "bluesky": "",
+        "instagram": "datavizsociety",
+        "linkedin": "data-visualization-society"
+      },
+      "note": "Pubblicazione della Data Visualization Society. Articoli tecnici e riflessivi sulla dataviz. Accesso libero."
+    },
+    {
+      "id": "visualising-data",
+      "nome": "Visualising Data",
+      "url": "https://www.visualisingdata.com",
+      "rss_feed": ["https://www.visualisingdata.com/feed/"],
+      "tipo": "blog",
+      "lingua": ["en"],
+      "paese": "GB",
+      "categorie": ["dataviz", "design", "rassegna", "tool"],
+      "profili_social": {
+        "twitter": "@visualisingdata",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": "andy-kirk"
+      },
+      "note": "Blog di Andy Kirk. Ottima rassegna mensile di dataviz degne di nota. Risorse gratuite e a pagamento."
+    },
+    {
+      "id": "silver-bulletin",
+      "nome": "Silver Bulletin",
+      "url": "https://www.natesilver.net",
+      "rss_feed": ["https://www.natesilver.net/feed"],
+      "tipo": "newsletter",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["sondaggi", "elezioni", "probabilità", "politica", "sport"],
+      "profili_social": {
+        "twitter": "@NateSilver538",
+        "bluesky": "@natesilver.net",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Newsletter Substack di Nate Silver dopo la sua uscita da FiveThirtyEight. Focus su forecasting e probabilità."
+    },
+    {
+      "id": "the-why-axis",
+      "nome": "The Why Axis",
+      "url": "https://thewhyaxis.substack.com",
+      "rss_feed": ["https://thewhyaxis.substack.com/feed"],
+      "tipo": "newsletter",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["dataviz", "design", "tool", "tutorial"],
+      "profili_social": {
+        "twitter": "",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Newsletter su dataviz e design dei grafici. Handle social da verificare. Frequenza irregolare."
+    },
+    {
+      "id": "john-burn-murdoch",
+      "nome": "John Burn-Murdoch",
+      "url": "https://www.ft.com/john-burn-murdoch",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["en"],
+      "paese": "GB",
+      "categorie": ["economia", "politica", "salute", "società", "clima"],
+      "profili_social": {
+        "twitter": "@jburnmurdoch",
+        "bluesky": "@jburnmurdoch.bsky.social",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Chief Data Reporter del Financial Times. Tra i più influenti nel giornalismo dati mondiale. Molto attivo su Twitter."
+    },
+    {
+      "id": "mona-chalabi",
+      "nome": "Mona Chalabi",
+      "url": "https://monachalabi.com",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["en"],
+      "paese": "GB",
+      "categorie": ["società", "genere", "economia", "diritti", "illustrazione"],
+      "profili_social": {
+        "twitter": "@MonaChalabi",
+        "bluesky": "@monachalabi.bsky.social",
+        "instagram": "monachalabi",
+        "linkedin": ""
+      },
+      "note": "Data journalist e illustratrice. Vincitrice Pulitzer 2023. Molto attiva su Instagram con dataviz originali."
+    },
+    {
+      "id": "giorgia-lupi",
+      "nome": "Giorgia Lupi",
+      "url": "https://giorgialupi.com",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["en", "it"],
+      "paese": "IT",
+      "categorie": ["dataviz", "data humanism", "design", "arte"],
+      "profili_social": {
+        "twitter": "@giorgialupi",
+        "bluesky": "",
+        "instagram": "giorgialupi",
+        "linkedin": "giorgialupi"
+      },
+      "note": "Infographic designer italiana, partner di Pentagram. Fondatrice del concetto di 'data humanism'. Molto influente."
+    },
+    {
+      "id": "alberto-cairo",
+      "nome": "Alberto Cairo",
+      "url": "https://albertocairo.com",
+      "rss_feed": ["https://albertocairo.com/feed/"],
+      "tipo": "giornalista",
+      "lingua": ["en", "es"],
+      "paese": "ES",
+      "categorie": ["infografica", "dataviz", "formazione", "etica", "comunicazione"],
+      "profili_social": {
+        "twitter": "@albertocairo",
+        "bluesky": "@albertocairo.bsky.social",
+        "instagram": "",
+        "linkedin": "albertocairo"
+      },
+      "note": "Professore di infografica all'Università di Miami. Autore di 'The Functional Art', 'The Truthful Art'. Blog attivo."
+    },
+    {
+      "id": "nathan-yau",
+      "nome": "Nathan Yau",
+      "url": "https://flowingdata.com/about",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["statistica", "dataviz", "r", "design"],
+      "profili_social": {
+        "twitter": "@flowingdata",
+        "bluesky": "@flowingdata.com",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Statistico e designer, creatore di FlowingData. Usa principalmente il profilo della testata, non uno separato."
+    },
+    {
+      "id": "simon-scarr",
+      "nome": "Simon Scarr",
+      "url": "",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["en"],
+      "paese": "GB",
+      "categorie": ["conflitti", "geopolitica", "economia", "dataviz"],
+      "profili_social": {
+        "twitter": "@simon_scarr",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": "simonscarr"
+      },
+      "note": "Head of Graphics di Reuters. Autore del famoso grafico 'Iraq's Bloody Toll'. Molto attivo su Twitter."
+    },
+    {
+      "id": "nadieh-bremer",
+      "nome": "Nadieh Bremer",
+      "url": "https://www.visualcinnamon.com",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["en"],
+      "paese": "NL",
+      "categorie": ["dataviz", "arte", "d3", "design"],
+      "profili_social": {
+        "twitter": "@NadiehBremer",
+        "bluesky": "@nadiehbremer.bsky.social",
+        "instagram": "nadiehbremer",
+        "linkedin": "nadiehbremer"
+      },
+      "note": "Data visualization designer olandese. Vince ogni anno i Kantar IIB Awards. Molto attiva sui social."
+    },
+    {
+      "id": "jeremy-singer-vine",
+      "nome": "Jeremy Singer-Vine",
+      "url": "https://www.jsvine.com",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["dataset", "open data", "investigazione", "tool"],
+      "profili_social": {
+        "twitter": "@jsvine",
+        "bluesky": "@jsvine.com",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Creatore di Data is Plural, ex BuzzFeed News. Guru dei dataset. Molto attivo su Bluesky."
+    },
+    {
+      "id": "mike-bostock",
+      "nome": "Mike Bostock",
+      "url": "https://observablehq.com/@mbostock",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["en"],
+      "paese": "US",
+      "categorie": ["dataviz", "d3", "tool", "programmazione"],
+      "profili_social": {
+        "twitter": "@mbostock",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Creatore di D3.js e fondatore di Observable. Più developer che giornalista, ma influenza enorme sulla dataviz."
+    },
+    {
+      "id": "jacopo-ottaviani",
+      "nome": "Jacopo Ottaviani",
+      "url": "https://jplusplus.org",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["it", "en"],
+      "paese": "IT",
+      "categorie": ["migrazioni", "diritti umani", "geopolitica", "investigazione"],
+      "profili_social": {
+        "twitter": "@jackottaviani",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": "jacopoottaviani"
+      },
+      "note": "Tra i più noti data journalist italiani a livello internazionale. Co-fondatore di Journalism++ Rome. Lavora con testate internazionali."
+    },
+    {
+      "id": "giulia-de-amicis",
+      "nome": "Giulia De Amicis",
+      "url": "",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["it", "en"],
+      "paese": "IT",
+      "categorie": ["politica", "economia", "dataviz", "infografica"],
+      "profili_social": {
+        "twitter": "@giuliadeamicis",
+        "bluesky": "",
+        "instagram": "giuliadeamicis",
+        "linkedin": "giuliadeamicis"
+      },
+      "note": "Data journalist e dataviz designer italiana freelance. Ha collaborato con varie testate italiane e internazionali. Handle da verificare."
+    },
+    {
+      "id": "giovanni-zagni",
+      "nome": "Giovanni Zagni",
+      "url": "https://pagellapolitica.it",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["it"],
+      "paese": "IT",
+      "categorie": ["fact-checking", "politica", "elezioni"],
+      "profili_social": {
+        "twitter": "@giovannizagni",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": "giovannizagni"
+      },
+      "note": "Direttore di Pagella Politica. Attivo su Twitter sul fact-checking politico italiano."
+    },
+    {
+      "id": "donato-sansone",
+      "nome": "Donato Sansone",
+      "url": "https://www.dataninja.eu",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["it"],
+      "paese": "IT",
+      "categorie": ["data journalism", "open data", "PA", "formazione"],
+      "profili_social": {
+        "twitter": "@donatosansone",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": "donatosansone"
+      },
+      "note": "Co-fondatore di Dataninja. Attivo nella community italiana di data journalism. Handle da verificare."
+    },
+    {
+      "id": "luca-tremolada",
+      "nome": "Luca Tremolada",
+      "url": "https://infodata.ilsole24ore.com",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["it"],
+      "paese": "IT",
+      "categorie": ["economia", "tecnologia", "finanza", "intelligenza artificiale"],
+      "profili_social": {
+        "twitter": "@tremolada",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": "lucatremolada"
+      },
+      "note": "Responsabile di InfoData al Sole 24 Ore. Esperto di tech e dati economici. Handle Twitter da verificare."
+    },
+    {
+      "id": "antonio-scalari",
+      "nome": "Antonio Scalari",
+      "url": "",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["it"],
+      "paese": "IT",
+      "categorie": ["clima", "ambiente", "scienza", "energia"],
+      "profili_social": {
+        "twitter": "@antoscalari",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "note": "Giornalista scientifico con approccio data-driven, specializzato in clima e ambiente. Handle da verificare."
+    },
+    {
+      "id": "donata-columbro",
+      "nome": "Donata Columbro",
+      "url": "",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["it", "en"],
+      "paese": "IT",
+      "categorie": ["data journalism", "dataviz", "open data", "società"],
+      "profili_social": {
+        "twitter": "",
+        "bluesky": "",
+        "instagram": "donatacolumbro",
+        "linkedin": "donatacolumbro"
+      },
+      "note": "Data journalist italiana, attiva nella community internazionale di data journalism. Handle Twitter e LinkedIn da verificare."
+    },
+    {
+      "id": "isaia-invernizzi",
+      "nome": "Isaia Invernizzi",
+      "url": "",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["it"],
+      "paese": "IT",
+      "categorie": ["data journalism", "investigazione"],
+      "profili_social": {
+        "twitter": "@easyinve",
+        "bluesky": "",
+        "instagram": "easyinve",
+        "linkedin": "isaiainvernizzi"
+      },
+      "note": "Giornalista italiano con approccio data-driven. Tutti i profili social sono da verificare: non ho informazioni affidabili sugli handle."
+    },
+    {
+      "id": "ambrogio-sanelli",
+      "nome": "Ambrogio Sanelli",
+      "url": "",
+      "rss_feed": [],
+      "tipo": "giornalista",
+      "lingua": ["it"],
+      "paese": "IT",
+      "categorie": ["data journalism"],
+      "profili_social": {
+        "twitter": "",
+        "bluesky": "",
+        "instagram": "",
+        "linkedin": "ambrogiosanelli"
+      },
+      "note": "Tutti i campi (url, categorie, profili social) sono da verificare: non ho informazioni affidabili su questa persona."
+    }
+  ]
+}
