@@ -86,23 +86,6 @@
       "note": "Hard paywall. RSS disponibile ma spesso limitato. Utile monitorare i tweet per identificare pezzi aperti."
     },
     {
-      "id": "ft-visual-storytelling",
-      "nome": "Financial Times – Visual Storytelling",
-      "url": "https://www.ft.com/visual-and-data-journalism",
-      "rss_feed": ["https://www.ft.com/rss/home"],
-      "tipo": "testata",
-      "lingua": ["en"],
-      "paese": "GB",
-      "categorie": ["economia", "finanza", "geopolitica", "clima", "tecnologia"],
-      "profili_social": {
-        "twitter": "@FTData",
-        "bluesky": "",
-        "instagram": "financialtimes",
-        "linkedin": "the-financial-times"
-      },
-      "note": "Hard paywall. Il team guidato da John Burn-Murdoch produce i migliori grafici del giornalismo mondiale. Monitorare via Twitter/Bluesky del team."
-    },
-    {
       "id": "guardian-data",
       "nome": "The Guardian – Data",
       "url": "https://www.theguardian.com/data",
