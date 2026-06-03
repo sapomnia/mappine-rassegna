@@ -225,23 +225,6 @@
       "note": "Think tank, non testata giornalistica. Produce survey e analisi quantitative di altissima qualità. Accesso libero. RSS affidabile."
     },
     {
-      "id": "axios",
-      "nome": "Axios",
-      "url": "https://www.axios.com",
-      "rss_feed": ["https://api.axios.com/feed/"],
-      "tipo": "testata",
-      "lingua": ["en"],
-      "paese": "US",
-      "categorie": ["tecnologia", "politica", "economia", "salute"],
-      "profili_social": {
-        "twitter": "@axios",
-        "bluesky": "@axios.com",
-        "instagram": "axios_news",
-        "linkedin": "axios"
-      },
-      "note": "Pezzi brevi e data-driven. Accesso misto (parte free, parte newsletter a pagamento)."
-    },
-    {
       "id": "ap-data-journalism",
       "nome": "Associated Press – Data Journalism",
       "url": "https://www.apnews.com",
@@ -427,23 +410,6 @@
         "linkedin": "civio"
       },
       "note": "ONG spagnola di data journalism civico. Simile a Openpolis in Italia. Accesso libero."
-    },
-    {
-      "id": "lanacion-data",
-      "nome": "La Nación Data – Argentina",
-      "url": "https://www.lanacion.com.ar/data/",
-      "rss_feed": ["https://www.lanacion.com.ar/arc/outboundfeeds/rss/"],
-      "tipo": "testata",
-      "lingua": ["es"],
-      "paese": "AR",
-      "categorie": ["politica", "economia", "società", "dati aperti"],
-      "profili_social": {
-        "twitter": "@LNdata",
-        "bluesky": "",
-        "instagram": "",
-        "linkedin": ""
-      },
-      "note": "Team dati del quotidiano argentino, pioniere in America Latina. Accesso parzialmente libero."
     },
     {
       "id": "nexo-jornal",
