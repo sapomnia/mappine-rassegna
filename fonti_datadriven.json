@@ -35,23 +35,6 @@
       "note": "Visual essays basati su dati originali. Frequenza irregolare ma qualità altissima. RSS affidabile."
     },
     {
-      "id": "fivethirtyeight",
-      "nome": "FiveThirtyEight",
-      "url": "https://fivethirtyeight.com",
-      "rss_feed": ["https://fivethirtyeight.com/features/feed/"],
-      "tipo": "testata",
-      "lingua": ["en"],
-      "paese": "US",
-      "categorie": ["politica", "sport", "economia", "sondaggi", "elezioni"],
-      "profili_social": {
-        "twitter": "@FiveThirtyEight",
-        "bluesky": "",
-        "instagram": "fivethirtyeight",
-        "linkedin": ""
-      },
-      "note": "Fondato da Nate Silver, ora parte di ESPN/ABC. Eccellente per sondaggi e analisi quantitativa. Verificare stato attuale della redazione nel 2026."
-    },
-    {
       "id": "nyt-upshot",
       "nome": "The Upshot – New York Times",
       "url": "https://www.nytimes.com/section/upshot",
@@ -461,23 +444,6 @@
         "linkedin": ""
       },
       "note": "Servizio fact-checking di Libération. Accesso parzialmente libero. Handle Twitter da verificare. RSS non affidabile."
-    },
-    {
-      "id": "zeit-online-data",
-      "nome": "Zeit Online – Datenjournalismus",
-      "url": "https://www.zeit.de/datenjournalismus",
-      "rss_feed": ["https://newsfeed.zeit.de/all"],
-      "tipo": "testata",
-      "lingua": ["de"],
-      "paese": "DE",
-      "categorie": ["politica", "economia", "società", "clima", "tecnologia"],
-      "profili_social": {
-        "twitter": "@zeitonline",
-        "bluesky": "@zeit.de",
-        "instagram": "zeitonline",
-        "linkedin": "zeitonline"
-      },
-      "note": "Sezione dati di Zeit Online. Soft paywall. Altissima qualità di infografiche interattive. RSS generale, non filtrato."
     },
     {
       "id": "correctiv",
