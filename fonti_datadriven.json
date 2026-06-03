@@ -52,23 +52,6 @@
       "note": "Sezione dati del NYT. Paywall (10 art/mese gratis). RSS restituisce solo titoli senza contenuto completo."
     },
     {
-      "id": "reuters-graphics",
-      "nome": "Reuters Graphics",
-      "url": "https://www.reuters.com/graphics",
-      "rss_feed": [],
-      "tipo": "testata",
-      "lingua": ["en"],
-      "paese": "GB",
-      "categorie": ["geopolitica", "economia", "clima", "conflitti", "salute"],
-      "profili_social": {
-        "twitter": "@ReutersGraphics",
-        "bluesky": "",
-        "instagram": "",
-        "linkedin": ""
-      },
-      "note": "Team di visual journalism di eccellenza. Non ha RSS dedicato per la sezione graphics: scraping diretto sulla pagina /graphics o via sitemap."
-    },
-    {
       "id": "bloomberg-graphics",
       "nome": "Bloomberg Graphics",
       "url": "https://www.bloomberg.com/graphics",
@@ -135,26 +118,6 @@
         "linkedin": ""
       },
       "note": "Soft paywall. RSS non filtra solo i pezzi grafici. Meglio monitorare @PostGraphics su Twitter."
-    },
-    {
-      "id": "propublica",
-      "nome": "ProPublica",
-      "url": "https://www.propublica.org",
-      "rss_feed": [
-        "https://www.propublica.org/feeds/propublica/main",
-        "https://www.propublica.org/feeds/propublica/data-store"
-      ],
-      "tipo": "testata",
-      "lingua": ["en"],
-      "paese": "US",
-      "categorie": ["politica", "giustizia", "sanità", "ambiente", "accountability"],
-      "profili_social": {
-        "twitter": "@propublica",
-        "bluesky": "@propublica.org",
-        "instagram": "propublica.org",
-        "linkedin": "propublica"
-      },
-      "note": "Non-profit di giornalismo investigativo. Accesso libero. Ottimo Data Store con dataset scaricabili."
     },
     {
       "id": "the-economist-data",
@@ -429,23 +392,6 @@
       "note": "Sezione fact-checking e data journalism di Le Monde. Soft paywall. RSS completo disponibile."
     },
     {
-      "id": "liberation-checknews",
-      "nome": "Libération – CheckNews",
-      "url": "https://www.liberation.fr/checknews/",
-      "rss_feed": [],
-      "tipo": "testata",
-      "lingua": ["fr"],
-      "paese": "FR",
-      "categorie": ["fact-checking", "politica", "società"],
-      "profili_social": {
-        "twitter": "@Lib_CheckNews",
-        "bluesky": "",
-        "instagram": "",
-        "linkedin": ""
-      },
-      "note": "Servizio fact-checking di Libération. Accesso parzialmente libero. Handle Twitter da verificare. RSS non affidabile."
-    },
-    {
       "id": "correctiv",
       "nome": "Correctiv",
       "url": "https://correctiv.org",
@@ -480,23 +426,6 @@
       "note": "Innovation Lab del Tagesspiegel, Berlin. Ottimi pezzi interattivi locali. Nessun RSS dedicato."
     },
     {
-      "id": "volkskrant-data",
-      "nome": "De Volkskrant – Datavisual",
-      "url": "https://www.volkskrant.nl/data/",
-      "rss_feed": ["https://www.volkskrant.nl/rss.xml"],
-      "tipo": "testata",
-      "lingua": ["nl"],
-      "paese": "NL",
-      "categorie": ["politica", "società", "clima", "economia"],
-      "profili_social": {
-        "twitter": "@volkskrant",
-        "bluesky": "@volkskrant.nl",
-        "instagram": "de.volkskrant",
-        "linkedin": "de-volkskrant"
-      },
-      "note": "Team dati del principale quotidiano olandese. Soft paywall. Ottima qualità."
-    },
-    {
       "id": "svt-datajournalistik",
       "nome": "SVT Nyheter – Datajournalistik",
       "url": "https://www.svt.se/datajournalistik/",
@@ -529,23 +458,6 @@
         "linkedin": ""
       },
       "note": "Newsletter settimanale di Jeremy Singer-Vine con link a dataset interessanti. Indispensabile. Archivio pubblico su GitHub."
-    },
-    {
-      "id": "chartr",
-      "nome": "Chartr",
-      "url": "https://www.chartr.co",
-      "rss_feed": [],
-      "tipo": "newsletter",
-      "lingua": ["en"],
-      "paese": "GB",
-      "categorie": ["economia", "tecnologia", "finanza", "pop culture", "dataviz"],
-      "profili_social": {
-        "twitter": "@ChartrdData",
-        "bluesky": "",
-        "instagram": "chartr.co",
-        "linkedin": "chartr"
-      },
-      "note": "Newsletter quotidiana con 3-5 grafici su temi vari. Formato molto snello. Ottima fonte per quick picks. Accesso gratuito."
     },
     {
       "id": "numlock-news",
@@ -684,57 +596,6 @@
       "note": "Newsletter su dataviz e design dei grafici. Handle social da verificare. Frequenza irregolare."
     },
     {
-      "id": "john-burn-murdoch",
-      "nome": "John Burn-Murdoch",
-      "url": "https://www.ft.com/john-burn-murdoch",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["en"],
-      "paese": "GB",
-      "categorie": ["economia", "politica", "salute", "società", "clima"],
-      "profili_social": {
-        "twitter": "@jburnmurdoch",
-        "bluesky": "@jburnmurdoch.bsky.social",
-        "instagram": "",
-        "linkedin": ""
-      },
-      "note": "Chief Data Reporter del Financial Times. Tra i più influenti nel giornalismo dati mondiale. Molto attivo su Twitter."
-    },
-    {
-      "id": "mona-chalabi",
-      "nome": "Mona Chalabi",
-      "url": "https://monachalabi.com",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["en"],
-      "paese": "GB",
-      "categorie": ["società", "genere", "economia", "diritti", "illustrazione"],
-      "profili_social": {
-        "twitter": "@MonaChalabi",
-        "bluesky": "@monachalabi.bsky.social",
-        "instagram": "monachalabi",
-        "linkedin": ""
-      },
-      "note": "Data journalist e illustratrice. Vincitrice Pulitzer 2023. Molto attiva su Instagram con dataviz originali."
-    },
-    {
-      "id": "giorgia-lupi",
-      "nome": "Giorgia Lupi",
-      "url": "https://giorgialupi.com",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["en", "it"],
-      "paese": "IT",
-      "categorie": ["dataviz", "data humanism", "design", "arte"],
-      "profili_social": {
-        "twitter": "@giorgialupi",
-        "bluesky": "",
-        "instagram": "giorgialupi",
-        "linkedin": "giorgialupi"
-      },
-      "note": "Infographic designer italiana, partner di Pentagram. Fondatrice del concetto di 'data humanism'. Molto influente."
-    },
-    {
       "id": "alberto-cairo",
       "nome": "Alberto Cairo",
       "url": "https://albertocairo.com",
@@ -750,244 +611,5 @@
         "linkedin": "albertocairo"
       },
       "note": "Professore di infografica all'Università di Miami. Autore di 'The Functional Art', 'The Truthful Art'. Blog attivo."
-    },
-    {
-      "id": "nathan-yau",
-      "nome": "Nathan Yau",
-      "url": "https://flowingdata.com/about",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["en"],
-      "paese": "US",
-      "categorie": ["statistica", "dataviz", "r", "design"],
-      "profili_social": {
-        "twitter": "@flowingdata",
-        "bluesky": "@flowingdata.com",
-        "instagram": "",
-        "linkedin": ""
-      },
-      "note": "Statistico e designer, creatore di FlowingData. Usa principalmente il profilo della testata, non uno separato."
-    },
-    {
-      "id": "simon-scarr",
-      "nome": "Simon Scarr",
-      "url": "",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["en"],
-      "paese": "GB",
-      "categorie": ["conflitti", "geopolitica", "economia", "dataviz"],
-      "profili_social": {
-        "twitter": "@simon_scarr",
-        "bluesky": "",
-        "instagram": "",
-        "linkedin": "simonscarr"
-      },
-      "note": "Head of Graphics di Reuters. Autore del famoso grafico 'Iraq's Bloody Toll'. Molto attivo su Twitter."
-    },
-    {
-      "id": "nadieh-bremer",
-      "nome": "Nadieh Bremer",
-      "url": "https://www.visualcinnamon.com",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["en"],
-      "paese": "NL",
-      "categorie": ["dataviz", "arte", "d3", "design"],
-      "profili_social": {
-        "twitter": "@NadiehBremer",
-        "bluesky": "@nadiehbremer.bsky.social",
-        "instagram": "nadiehbremer",
-        "linkedin": "nadiehbremer"
-      },
-      "note": "Data visualization designer olandese. Vince ogni anno i Kantar IIB Awards. Molto attiva sui social."
-    },
-    {
-      "id": "jeremy-singer-vine",
-      "nome": "Jeremy Singer-Vine",
-      "url": "https://www.jsvine.com",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["en"],
-      "paese": "US",
-      "categorie": ["dataset", "open data", "investigazione", "tool"],
-      "profili_social": {
-        "twitter": "@jsvine",
-        "bluesky": "@jsvine.com",
-        "instagram": "",
-        "linkedin": ""
-      },
-      "note": "Creatore di Data is Plural, ex BuzzFeed News. Guru dei dataset. Molto attivo su Bluesky."
-    },
-    {
-      "id": "mike-bostock",
-      "nome": "Mike Bostock",
-      "url": "https://observablehq.com/@mbostock",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["en"],
-      "paese": "US",
-      "categorie": ["dataviz", "d3", "tool", "programmazione"],
-      "profili_social": {
-        "twitter": "@mbostock",
-        "bluesky": "",
-        "instagram": "",
-        "linkedin": ""
-      },
-      "note": "Creatore di D3.js e fondatore di Observable. Più developer che giornalista, ma influenza enorme sulla dataviz."
-    },
-    {
-      "id": "jacopo-ottaviani",
-      "nome": "Jacopo Ottaviani",
-      "url": "https://jplusplus.org",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["it", "en"],
-      "paese": "IT",
-      "categorie": ["migrazioni", "diritti umani", "geopolitica", "investigazione"],
-      "profili_social": {
-        "twitter": "@jackottaviani",
-        "bluesky": "",
-        "instagram": "",
-        "linkedin": "jacopoottaviani"
-      },
-      "note": "Tra i più noti data journalist italiani a livello internazionale. Co-fondatore di Journalism++ Rome. Lavora con testate internazionali."
-    },
-    {
-      "id": "giulia-de-amicis",
-      "nome": "Giulia De Amicis",
-      "url": "",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["it", "en"],
-      "paese": "IT",
-      "categorie": ["politica", "economia", "dataviz", "infografica"],
-      "profili_social": {
-        "twitter": "@giuliadeamicis",
-        "bluesky": "",
-        "instagram": "giuliadeamicis",
-        "linkedin": "giuliadeamicis"
-      },
-      "note": "Data journalist e dataviz designer italiana freelance. Ha collaborato con varie testate italiane e internazionali. Handle da verificare."
-    },
-    {
-      "id": "giovanni-zagni",
-      "nome": "Giovanni Zagni",
-      "url": "https://pagellapolitica.it",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["it"],
-      "paese": "IT",
-      "categorie": ["fact-checking", "politica", "elezioni"],
-      "profili_social": {
-        "twitter": "@giovannizagni",
-        "bluesky": "",
-        "instagram": "",
-        "linkedin": "giovannizagni"
-      },
-      "note": "Direttore di Pagella Politica. Attivo su Twitter sul fact-checking politico italiano."
-    },
-    {
-      "id": "donato-sansone",
-      "nome": "Donato Sansone",
-      "url": "https://www.dataninja.eu",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["it"],
-      "paese": "IT",
-      "categorie": ["data journalism", "open data", "PA", "formazione"],
-      "profili_social": {
-        "twitter": "@donatosansone",
-        "bluesky": "",
-        "instagram": "",
-        "linkedin": "donatosansone"
-      },
-      "note": "Co-fondatore di Dataninja. Attivo nella community italiana di data journalism. Handle da verificare."
-    },
-    {
-      "id": "luca-tremolada",
-      "nome": "Luca Tremolada",
-      "url": "https://infodata.ilsole24ore.com",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["it"],
-      "paese": "IT",
-      "categorie": ["economia", "tecnologia", "finanza", "intelligenza artificiale"],
-      "profili_social": {
-        "twitter": "@tremolada",
-        "bluesky": "",
-        "instagram": "",
-        "linkedin": "lucatremolada"
-      },
-      "note": "Responsabile di InfoData al Sole 24 Ore. Esperto di tech e dati economici. Handle Twitter da verificare."
-    },
-    {
-      "id": "antonio-scalari",
-      "nome": "Antonio Scalari",
-      "url": "",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["it"],
-      "paese": "IT",
-      "categorie": ["clima", "ambiente", "scienza", "energia"],
-      "profili_social": {
-        "twitter": "@antoscalari",
-        "bluesky": "",
-        "instagram": "",
-        "linkedin": ""
-      },
-      "note": "Giornalista scientifico con approccio data-driven, specializzato in clima e ambiente. Handle da verificare."
-    },
-    {
-      "id": "donata-columbro",
-      "nome": "Donata Columbro",
-      "url": "",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["it", "en"],
-      "paese": "IT",
-      "categorie": ["data journalism", "dataviz", "open data", "società"],
-      "profili_social": {
-        "twitter": "",
-        "bluesky": "",
-        "instagram": "donatacolumbro",
-        "linkedin": "donatacolumbro"
-      },
-      "note": "Data journalist italiana, attiva nella community internazionale di data journalism. Handle Twitter e LinkedIn da verificare."
-    },
-    {
-      "id": "isaia-invernizzi",
-      "nome": "Isaia Invernizzi",
-      "url": "",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["it"],
-      "paese": "IT",
-      "categorie": ["data journalism", "investigazione"],
-      "profili_social": {
-        "twitter": "@easyinve",
-        "bluesky": "",
-        "instagram": "easyinve",
-        "linkedin": "isaiainvernizzi"
-      },
-      "note": "Giornalista italiano con approccio data-driven. Tutti i profili social sono da verificare: non ho informazioni affidabili sugli handle."
-    },
-    {
-      "id": "ambrogio-sanelli",
-      "nome": "Ambrogio Sanelli",
-      "url": "",
-      "rss_feed": [],
-      "tipo": "giornalista",
-      "lingua": ["it"],
-      "paese": "IT",
-      "categorie": ["data journalism"],
-      "profili_social": {
-        "twitter": "",
-        "bluesky": "",
-        "instagram": "",
-        "linkedin": "ambrogiosanelli"
-      },
-      "note": "Tutti i campi (url, categorie, profili social) sono da verificare: non ho informazioni affidabili su questa persona."
-    }
-  ]
+    },  ]
 }
