@@ -19,24 +19,26 @@ Le fonti senza RSS (Reuters Graphics, Bloomberg, profili giornalisti senza feed,
 
 ## Test manuale
 
-Dal tab **Actions** del repo → workflow **Rassegna settimanale** → **Run workflow** → metti `force: true`. Bypassa il controllo orario e manda la mail subito.
+Dal tab **Actions** del repo → workflow **Rassegna settimanale** → **Run workflow**. Lo script gira sempre quando invocato manualmente.
 
 In locale, senza inviare nulla:
 
 ```bash
 pip install -r requirements.txt
-FORCE_RUN=1 python rassegna.py
+python rassegna.py
 ```
 
-Stampa l'HTML su stdout (`RESEND_API_KEY` non impostata = no invio).
+Senza `RESEND_API_KEY` nell'ambiente, lo script stampa l'HTML su stdout invece di spedire.
 
 ## Aggiornare l'elenco fonti
 
 Modifica `fonti_datadriven.json` (direttamente su GitHub o in locale e poi push). Lo schema è documentato dentro il file stesso, in `meta.campi`.
 
-## Schedulazione e DST
+## Schedulazione, DST e ritardi
 
-GitHub Actions usa cron in UTC. Per centrare le 5:00 di Roma sia in ora solare che legale il workflow ha **due** cron (03:00 UTC e 04:00 UTC), e lo script esce subito se l'orario di Roma non è davvero le 5 — così non parte due volte nei periodi di transizione.
+Cron: `0 3 * * 3` = mercoledì 03:00 UTC → 5:00 Roma in ora legale (mar-ott), 4:00 in ora solare (nov-mar). Tenuto un solo cron per evitare doppi invii nei periodi di transizione DST.
+
+GitHub Actions free non garantisce la puntualità del cron: durante i picchi può ritardare anche di alcune ore. Per la rassegna settimanale è accettabile — arriva comunque "mercoledì mattina". Se serve precisione al minuto, usare uno scheduler esterno (es. cron-job.org) che richiami il workflow via API.
 
 ## Costi
 

@@ -2,18 +2,10 @@ name: Rassegna settimanale
 
 on:
   schedule:
-    # 5:00 a Roma in CEST (estivo, mar-ott) → 03:00 UTC
+    # Mercoledì 03:00 UTC = 5:00 Roma in ora legale (CEST), 4:00 in ora solare (CET).
+    # Su GH Actions free i cron possono ritardare di ore: l'orario è indicativo.
     - cron: '0 3 * * 3'
-    # 5:00 a Roma in CET (invernale, nov-mar) → 04:00 UTC
-    - cron: '0 4 * * 3'
   workflow_dispatch:
-    inputs:
-      force:
-        description: 'Forza invio anche fuori orario (per test)'
-        required: false
-        default: 'false'
-        type: choice
-        options: ['false', 'true']
 
 jobs:
   rassegna:
@@ -34,4 +26,3 @@ jobs:
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           MAIL_TO: riccardo@mappine.it
-          FORCE_RUN: ${{ github.event.inputs.force == 'true' && '1' || '0' }}

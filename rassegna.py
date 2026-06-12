@@ -34,14 +34,6 @@ class Articolo:
     fonte_tipo: str
 
 
-def è_l_ora_giusta() -> bool:
-    """Il workflow ha due cron (CET + CEST). Eseguiamo solo se a Roma sono davvero le 5 del mercoledì."""
-    if os.environ.get("FORCE_RUN") == "1":
-        return True
-    now = datetime.now(ROME)
-    return now.weekday() == 2 and now.hour == 5
-
-
 def parse_data(entry) -> datetime | None:
     for attr in ("published", "updated", "created"):
         raw = entry.get(attr)
@@ -177,9 +169,6 @@ def invia_mail(html: str, n_articoli: int) -> None:
 
 
 def main() -> int:
-    if not è_l_ora_giusta():
-        print(f"Skip: non è mercoledì 5:00 a Roma (adesso: {datetime.now(ROME).isoformat(timespec='minutes')}).")
-        return 0
     data = json.loads(FONTI_PATH.read_text(encoding="utf-8"))
     fonti = data["fonti"]
     soglia = datetime.now(timezone.utc) - timedelta(days=WINDOW_DAYS)
