@@ -6,16 +6,16 @@ Ogni mercoledì alle 5:00 (ora di Roma) un workflow GitHub Actions:
 1. legge `fonti_datadriven.json`,
 2. scarica i feed RSS di tutte le fonti elencate,
 3. filtra i post degli ultimi 7 giorni,
-4. invia una mail HTML a `riccardo@mappine.it` via [Resend](https://resend.com).
+4. invia una mail HTML a `riccardo@mappine.it` via Gmail SMTP.
 
 Le fonti senza RSS (Reuters Graphics, Bloomberg, profili giornalisti senza feed, ecc.) compaiono in fondo alla mail come promemoria da controllare a mano.
 
 ## Setup
 
-1. Crea un account su [resend.com](https://resend.com) e genera un'API key.
+1. Su [myaccount.google.com](https://myaccount.google.com) attiva la 2-Step Verification, poi vai su [App passwords](https://myaccount.google.com/apppasswords) e crea una password applicativa (es. nome "mappine-rassegna"). Copia i 16 caratteri.
 2. Su GitHub → **Settings → Secrets and variables → Actions → New repository secret**:
-   - `RESEND_API_KEY` = la chiave appena creata.
-3. (Opzionale) Verifica un dominio su Resend e imposta la variabile `MAIL_FROM` nel workflow (es. `rassegna@mappine.it`). Senza dominio verificato la mail parte da `onboarding@resend.dev` ma rischia lo spam.
+   - `GMAIL_USER` = il tuo indirizzo gmail (mittente)
+   - `GMAIL_APP_PASSWORD` = la password di 16 caratteri
 
 ## Test manuale
 
@@ -28,7 +28,7 @@ pip install -r requirements.txt
 python rassegna.py
 ```
 
-Senza `RESEND_API_KEY` nell'ambiente, lo script stampa l'HTML su stdout invece di spedire.
+Senza `GMAIL_USER`/`GMAIL_APP_PASSWORD` nell'ambiente, lo script stampa l'HTML su stdout invece di spedire.
 
 ## Aggiornare l'elenco fonti
 

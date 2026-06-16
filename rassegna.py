@@ -5,24 +5,24 @@ from __future__ import annotations
 import html
 import json
 import os
+import smtplib
 import sys
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
+from email.message import EmailMessage
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import feedparser
-import requests
 
 ROME = ZoneInfo("Europe/Rome")
 WINDOW_DAYS = 7
 FONTI_PATH = Path(__file__).parent / "fonti_datadriven.json"
-RESEND_URL = "https://api.resend.com/emails"
-DEFAULT_FROM = "onboarding@resend.dev"
+SMTP_HOST = "smtp.gmail.com"
+SMTP_PORT = 465
 DEFAULT_TO = "riccardo@mappine.it"
 USER_AGENT = "mappine-rassegna/1.0 (+https://mappine.it)"
-HTTP_TIMEOUT = 20
 
 
 @dataclass
@@ -144,28 +144,25 @@ def render_html(articoli: list[Articolo], fonti_senza_rss: list[dict], errori: l
     return "\n".join(out)
 
 
-def invia_mail(html: str, n_articoli: int) -> None:
-    api_key = os.environ.get("RESEND_API_KEY")
-    if not api_key:
-        print("RESEND_API_KEY mancante: stampo l'HTML su stdout, non invio.", file=sys.stderr)
-        print(html)
+def invia_mail(corpo_html: str, n_articoli: int) -> None:
+    user = os.environ.get("GMAIL_USER")
+    password = os.environ.get("GMAIL_APP_PASSWORD")
+    if not user or not password:
+        print("GMAIL_USER/GMAIL_APP_PASSWORD mancanti: stampo l'HTML su stdout, non invio.", file=sys.stderr)
+        print(corpo_html)
         return
-    mittente = os.environ.get("MAIL_FROM", DEFAULT_FROM)
     destinatario = os.environ.get("MAIL_TO", DEFAULT_TO)
     oggi = datetime.now(ROME).strftime("%d/%m/%Y")
-    resp = requests.post(
-        RESEND_URL,
-        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
-        json={
-            "from": mittente,
-            "to": [destinatario],
-            "subject": f"Rassegna mappine {oggi} — {n_articoli} articoli",
-            "html": html,
-        },
-        timeout=HTTP_TIMEOUT,
-    )
-    resp.raise_for_status()
-    print(f"Mail inviata: id={resp.json().get('id')}")
+    msg = EmailMessage()
+    msg["From"] = user
+    msg["To"] = destinatario
+    msg["Subject"] = f"Rassegna mappine {oggi} — {n_articoli} articoli"
+    msg.set_content(f"Apri la mail in HTML per leggere la rassegna ({n_articoli} articoli).")
+    msg.add_alternative(corpo_html, subtype="html")
+    with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT) as smtp:
+        smtp.login(user, password)
+        smtp.send_message(msg)
+    print(f"Mail inviata a {destinatario} via Gmail SMTP.")
 
 
 def main() -> int:
